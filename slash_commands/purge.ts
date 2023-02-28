@@ -28,9 +28,9 @@ async function purge(client: Client, interaction: CommandInteraction) {
 			toDelete = await channel.messages.fetch({ after });
 		} else if (amount) {
 			// Ooooh nice, combined conditions. <3
-			if (!amount || amount < 2 || amount > 100) {
+			if (!amount || amount < 1 || amount > 100) {
 				interaction.reply({
-					content: "Please provide a number between 2 and 100 for the number of messages to delete",
+					content: "Please provide a number between 1 and 100 for the number of messages to delete",
 					ephemeral: true
 				});
 				return;
